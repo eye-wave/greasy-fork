@@ -5,7 +5,7 @@
 // @match          https://samequizy.pl/*
 // @icon           https://www.google.com/s2/favicons?sz=64&domain=samequizy.pl
 // @grant          none
-// @version        2.0.3
+// @version        2.0.4
 // @author         eye-wave
 // @license GPL    3.0
 // @description    tworzy przycisk do natychmiastowego rozwiązania quizu
@@ -79,7 +79,7 @@ function createModal(quizdata) {
     div.dataset.id = id
     div.style.width = "fit-content"
 
-    if ( title.length > 18 ) title = title.substring(0, 17) + "..."
+    if (title.length > 18) title = `${title.substring(0, 17)}...`
 
     div.innerHTML += `<div class="text">${title}</div>`
     if (img) div.innerHTML += img
