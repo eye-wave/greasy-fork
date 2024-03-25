@@ -1,0 +1,11 @@
+{
+  "name": "greasyfork-scripts",
+  "private": true,
+  "scripts": {
+    "format": "biome format . --write",
+    "lint": "biome lint . --apply-unsafe || true"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.2"
+  }
+}
