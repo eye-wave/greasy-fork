@@ -16,6 +16,9 @@
       "recommended": true,
       "complexity": {
         "noForEach": "off"
+      },
+      "style": {
+        "noParameterAssign": "off"
       }
     }
   },
