@@ -4,7 +4,7 @@
 // @match       https://*.fandom.com/*
 // @icon        https://www.google.com/s2/favicons?sz=64&domain=fandom.com
 // @grant       none
-// @version     1.0.1
+// @version     1.0.2
 // @author      eye-wave
 // @license GPL 3.0
 // @description removes unnecessary elements from fandom website, leaving only what's important
@@ -15,23 +15,23 @@ function $(query, all = false) {
   return document.querySelector(query)
 }
 
-const toResize = [".main-container", ".fandom-community-header__background"]
-const massRemove = ["script", "iframe"]
+const toResize = [".fandom-community-header__background",".main-container"]
+const massRemove = ["iframe","script"]
 const removeListSingle = [
-  "footer",
+  ".bottom-ads-container",
+  ".fandom-sticky-header",
   ".global-navigation",
-  ".right-rail-wrapper",
+  ".global-registration-buttons",
+  ".notifications-placeholder",
   ".page__right-rail",
   ".page-side-tools",
-  ".global-registration-buttons",
-  ".fandom-sticky-header",
-  ".notifications-placeholder",
+  ".right-rail-wrapper",
   ".top-ads-container",
-  ".bottom-ads-container",
   ".unified-search__layout__right-rail",
+  "#age-gate",
   "#p-views",
   "#WikiaBar",
-  "#age-gate",
+  "footer",
 ]
 
 const sleep = async ms => new Promise(r => setTimeout(r, ms))
