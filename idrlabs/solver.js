@@ -2,8 +2,9 @@
 // @name        idrlabs.com - Solver
 // @namespace   Violentmonkey Scripts
 // @match       https://www.idrlabs.com/*/test.php
+// @icon        https://www.google.com/s2/favicons?sz=64&domain=idrlabs.com
 // @grant       none
-// @version     1.1.0
+// @version     1.1.1
 // @author      eye-wave
 // @license GPL 3.0
 // @description creates a button to solve the quiz with random answers

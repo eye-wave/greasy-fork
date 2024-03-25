@@ -3,8 +3,9 @@
 // @name:en        samequizy.pl - Quiz solver
 // @namespace      samequizy.pl utils
 // @match          https://samequizy.pl/*
+// @icon           https://www.google.com/s2/favicons?sz=64&domain=samequizy.pl
 // @grant          none
-// @version        2.0.2
+// @version        2.0.3
 // @author         eye-wave
 // @license GPL    3.0
 // @description    tworzy przycisk do natychmiastowego rozwiązania quizu
