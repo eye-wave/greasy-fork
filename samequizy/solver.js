@@ -4,7 +4,7 @@
 // @namespace      samequizy.pl utils
 // @match          https://samequizy.pl/*
 // @grant          none
-// @version        2.0.1
+// @version        2.0.2
 // @author         eye-wave
 // @license GPL    3.0
 // @description    tworzy przycisk do natychmiastowego rozwiązania quizu
