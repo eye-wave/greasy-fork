@@ -4,7 +4,7 @@
 // @match       https://*.fandom.com/*
 // @icon        https://www.google.com/s2/favicons?sz=64&domain=fandom.com
 // @grant       none
-// @version     1.0.2
+// @version     1.0.3
 // @author      eye-wave
 // @license GPL 3.0
 // @description removes unnecessary elements from fandom website, leaving only what's important
@@ -15,8 +15,8 @@ function $(query, all = false) {
   return document.querySelector(query)
 }
 
-const toResize = [".fandom-community-header__background",".main-container"]
-const massRemove = ["iframe","script"]
+const toResize = [".fandom-community-header__background", ".main-container"]
+const massRemove = ["iframe", "script"]
 const removeListSingle = [
   ".bottom-ads-container",
   ".fandom-sticky-header",
