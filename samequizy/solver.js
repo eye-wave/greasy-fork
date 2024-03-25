@@ -5,7 +5,7 @@
 // @match          https://samequizy.pl/*
 // @icon           https://www.google.com/s2/favicons?sz=64&domain=samequizy.pl
 // @grant          none
-// @version        2.0.4
+// @version        2.1.0
 // @author         eye-wave
 // @license GPL    3.0
 // @description    tworzy przycisk do natychmiastowego rozwiązania quizu
@@ -31,29 +31,22 @@ function createButton() {
   button.addEventListener("click", handleButtonClick)
 
   function handleButtonClick() {
-    const quizdata = getQuizData()
-    const modal = createModal(quizdata)
+    try {
+      const quizdata = getQuizData()
+      const modal = createModal(quizdata)
 
-    modal.onclose = id => {
-      if (typeof id !== "string") return
-      if (id === "act__quit") return
-      if (id === "ans__random") {
-        document.querySelectorAll(".question-answers").forEach(question => {
-          const answerElements = question.querySelectorAll(".answer")
-          const randomAnswer = answerElements[Math.floor(Math.random() * answerElements.length)]
+      modal.onclose = id => {
+        if (typeof id !== "string") return
+        if (id === "act__quit") return
+        if (id === "ans__random") return answerRandomly()
 
-          randomAnswer?.click()
-        })
+        try {
+          solve(quizdata, id)
+        } catch {}
 
-        return
+        button.remove()
       }
-
-      try {
-        solve(quizdata, id)
-      } catch {}
-
-      button.remove()
-    }
+    } catch {}
   }
   return button
 }
@@ -161,11 +154,20 @@ function solve(quizdata, resultId) {
       .sort((a, b) => a.score - b.score)
       .at(-1)?.answer
 
-    if (!answer) return
+    if (!answer) throw Error()
     const answerElements = [...question.querySelectorAll(".answer")]
     const [pickedAnswer] = answerElements.filter(el => el.textContent === answer.text) ?? []
 
     pickedAnswer?.click()
+  })
+}
+
+function answerRandomly() {
+  document.querySelectorAll(".question-answers").forEach(question => {
+    const answerElements = question.querySelectorAll(".answer")
+    const randomAnswer = answerElements[Math.floor(Math.random() * answerElements.length)]
+
+    randomAnswer?.click()
   })
 }
 
