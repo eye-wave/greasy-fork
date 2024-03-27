@@ -4,19 +4,21 @@
 // @match       https://*.fandom.com/*
 // @icon        https://www.google.com/s2/favicons?sz=64&domain=fandom.com
 // @grant       none
-// @version     1.0.3
+// @version     1.1.0
 // @author      eye-wave
 // @license GPL 3.0
 // @description removes unnecessary elements from fandom website, leaving only what's important
 // ==/UserScript==
 
+const d = document
+
 function $(query, all = false) {
-  if (!all) return document.querySelectorAll(query)
-  return document.querySelector(query)
+  if (all) return d.querySelectorAll(query)
+  return d.querySelector(query)
 }
 
 const toResize = [".fandom-community-header__background", ".main-container"]
-const massRemove = ["iframe", "script"]
+const massRemove = ["iframe", "link[as='script']", "meta", "script", "style:not([type='text/css'])"]
 const removeListSingle = [
   ".bottom-ads-container",
   ".fandom-sticky-header",
@@ -29,29 +31,21 @@ const removeListSingle = [
   ".top-ads-container",
   ".unified-search__layout__right-rail",
   "#age-gate",
+  "#featured-video__player-container",
+  "#global-explore-navigation",
   "#p-views",
   "#WikiaBar",
+  "body > svg + *",
+  "div>div[data-tracking-opt-in-overlay]",
   "footer",
 ]
 
-const sleep = async ms => new Promise(r => setTimeout(r, ms))
-
-const observeDOMChanges = () => {
-  const observer = new MutationObserver((mutationsList, observer) => {
-    for (const mutation of mutationsList) {
-      if (mutation.type === "childList") {
-        handleDOMChanges()
-      }
-    }
-  })
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-  })
-}
-
-function handleDOMChanges() {
+removeBloatware()
+/**
+ * Removes all unnecessary elements,
+ * declared in "removeListSingle" list
+ */
+function removeBloatware() {
   removeListSingle.forEach(q => $(q)?.remove())
   massRemove.forEach(q => $(q, true).forEach(e => e?.remove()))
   for (const q of toResize) {
@@ -63,4 +57,38 @@ function handleDOMChanges() {
   }
 }
 
-observeDOMChanges()
+removeExcessiveBodyClassNames()
+/**
+ * This only leaves the necessary style and
+ * restores the ability to scroll the page,
+ * after removing cookie popup
+ */
+function removeExcessiveBodyClassNames() {
+  for (const c of d.body.classList) {
+    if (c.includes("skin-fandom")) continue
+    d.body.classList.remove(c)
+  }
+}
+
+function removeExcessiveHtmlAttrs() {
+  d.documentElement.removeAttribute("class")
+  d.documentElement.removeAttribute("dir")
+  d.documentElement.removeAttribute("style")
+}
+
+new MutationObserver(mutationsList => {
+  for (const mutation of mutationsList) {
+    if (mutation.type === "childList") removeBloatware()
+    if (mutation.type === "attributes") {
+      removeExcessiveBodyClassNames()
+      removeExcessiveHtmlAttrs()
+    }
+  }
+}).observe(d.documentElement, {
+  childList: true,
+  subtree: true,
+  attributes: true,
+  attributeOldValue: true,
+})
+
+window.ads = undefined
