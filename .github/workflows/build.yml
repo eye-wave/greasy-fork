@@ -3,7 +3,7 @@ name: Build user scripts
 on:
   push:
     branches:
-      - main:
+      - main
 
 jobs:
   build:
