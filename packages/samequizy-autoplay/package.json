@@ -3,6 +3,10 @@
   "version": "3.0.1",
   "module": "index.ts",
   "type": "module",
+  "author": {
+    "name": "eye-wave",
+    "url": "https://github.com/eye-wave"
+  },
   "scripts": {
     "format": "biome format . --write",
     "lint": "biome lint . --apply-unsafe",
