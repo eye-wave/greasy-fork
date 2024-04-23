@@ -2,8 +2,8 @@ name: Build user scripts
 
 on:
   push:
-    branches:
-      - main 
+    tags:
+      - '*'
 
 jobs:
   build:
