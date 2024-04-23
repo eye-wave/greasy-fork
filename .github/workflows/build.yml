@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-    matrix:
-      workspace:
-        - packages/fandom-debloat
-        - packages/idrlabs-solver
-        - packages/samequizy-autoplay
-        - packages/samequizy-solver
+      matrix:
+        workspace:
+          - packages/fandom-debloat
+          - packages/idrlabs-solver
+          - packages/samequizy-autoplay
+          - packages/samequizy-solver
 
     steps:
       - uses: actions/checkout@v4
