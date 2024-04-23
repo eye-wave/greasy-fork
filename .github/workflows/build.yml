@@ -35,19 +35,18 @@ jobs:
           - samequizy-autoplay
           - samequizy-solver
 
-      steps:
+    steps:
+    - run: cd "packages/${{ matrix.workspace }}"
 
-      - run: cd "packages/${{ matrix.workspace }}"
+    - name: Build user scripts
+      run: bun run build
 
-      - name: Build user scripts
-        run: bun run build
+    - run: cd dist
 
-      - run: cd dist
-
-      - name: Create Release for ${{ matrix.workspace }}
-        uses: ncipollo/release-action@v1.14.0
-        with:
-          allowUpdates: true
-          replacesArtifacts: true
-          tag: ${{ matrix.workspace }}
-          artifacts: "script.user.js"
+    - name: Create Release for ${{ matrix.workspace }}
+      uses: ncipollo/release-action@v1.14.0
+      with:
+        allowUpdates: true
+        replacesArtifacts: true
+        tag: ${{ matrix.workspace }}
+        artifacts: "script.user.js"
