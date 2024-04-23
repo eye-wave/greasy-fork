@@ -9,10 +9,10 @@ const { entrypoint, manifestSrc = "src/manifest.json", outfile = "dist/script.us
 const { outputFiles } = await ESBuild.build({
   entryPoints: [entrypoint ?? (await findEntry())],
   minify: false,
+  write: false,
   loader: {
     ".svg": "text",
   },
-  write: false,
 })
 
 if (outputFiles.length !== 1) throw Error(`Wrong number of output files for: ${entrypoint} (${outputFiles.length})`)

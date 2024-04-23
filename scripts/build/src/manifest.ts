@@ -26,8 +26,8 @@ export function createManifest(data: Record<string, string>) {
     userscriptManifest.push(`// @${key}${" ".repeat(spaces)}${modifiedValue}`)
   }
 
-  userscriptManifest.unshift("// ==UserScript==")
-  userscriptManifest.push("// ==UserScript==")
+  userscriptManifest.unshift("// ==/UserScript==")
+  userscriptManifest.push("// ==/UserScript==")
 
   return `${userscriptManifest.join("\n")}\n`
 }
