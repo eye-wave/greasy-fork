@@ -29,3 +29,8 @@ jobs:
         with:
           name: ${{ matrix.workspace }}-user-script
           path: packages/${{ matrix.workspace }}/dist
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          artifacts: "release.tar.gz,**/*.js"
