@@ -4,8 +4,7 @@ import { createManifest } from "./manifest"
 import { findEntry } from "./entry"
 import { parseFlags } from "./flags"
 
-const { entrypoint, manifestSrc = "src/manifest.json", outfile } = parseFlags(process.argv)
-if (!outfile) throw Error("Output file is required")
+const { entrypoint, manifestSrc = "src/manifest.json", outfile = "dist/script.user.js" } = parseFlags(process.argv)
 
 const { outputFiles } = await ESBuild.build({
   entryPoints: [entrypoint ?? (await findEntry())],

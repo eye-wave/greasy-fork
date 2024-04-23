@@ -1,4 +1,4 @@
-name: Build user scripts
+name: Build and Release user scripts
 
 on:
   push:
@@ -12,17 +12,40 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - run: bun install
-      - run: bun run build
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
 
-      - name: Create Release
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build user scripts
+        run: bun run build
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    strategy:
+      matrix:
+        workspace:
+          - fandom-debloat
+          - idrlabs-solver
+          - samequizy-autoplay
+          - samequizy-solver
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create Release for ${{ matrix.workspace }}
         uses: ncipollo/release-action@v1.14.0
         with:
           allowUpdates: true
-          removeArtifacts: true
           replacesArtifacts: true
-          tag: Latest_Release
-          artifacts: "release.tar.gz,**/*.userscript.js"
+          tag: ${{ matrix.workspace }}
+          artifacts: "release.tar.gz,packages/${{ matrix.workspace }}/dist/script.user.js"
