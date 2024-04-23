@@ -35,7 +35,7 @@ jobs:
     - name: Build user scripts
       run: bun run build
 
-    - run: cd dist
+    - run: cd "packages/${{ matrix.workspace }}/dist"
 
     - name: Create Release for ${{ matrix.workspace }}
       uses: ncipollo/release-action@v1.14.0
