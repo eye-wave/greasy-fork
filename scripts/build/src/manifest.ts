@@ -29,5 +29,5 @@ export function createManifest(data: Record<string, string>) {
   userscriptManifest.unshift("// ==UserScript==")
   userscriptManifest.push("// ==UserScript==")
 
-  return userscriptManifest.join("\n")
+  return userscriptManifest.join("\n") + "\n"
 }
