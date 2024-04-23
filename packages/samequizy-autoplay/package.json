@@ -11,7 +11,7 @@
     "format": "biome format . --write",
     "lint": "biome lint . --apply-unsafe",
     "test": "bun test --coverage",
-    "build": "builder -o dist/samequizy-autoplay.userscript.js"
+    "build": "builder -o dist/samequizy-autoplay.user.js"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.1",
