@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  prepare:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,11 +21,8 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Build user scripts
-        run: bun run build
-
-  release:
-    needs: build
+  build:
+    needs: prepare
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -38,9 +35,14 @@ jobs:
           - samequizy-autoplay
           - samequizy-solver
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      steps:
+
+      - run: cd "packages/${{ matrix.workspace }}"
+
+      - name: Build user scripts
+        run: bun run build
+
+      - run: cd dist
 
       - name: Create Release for ${{ matrix.workspace }}
         uses: ncipollo/release-action@v1.14.0
@@ -48,4 +50,4 @@ jobs:
           allowUpdates: true
           replacesArtifacts: true
           tag: ${{ matrix.workspace }}
-          artifacts: "release.tar.gz,packages/${{ matrix.workspace }}/dist/script.user.js"
+          artifacts: "script.user.js"
