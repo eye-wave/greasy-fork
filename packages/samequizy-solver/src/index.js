@@ -1,17 +1,3 @@
-// ==UserScript==
-// @name           samequizy.pl - Quiz solver
-// @name:en        samequizy.pl - Quiz solver
-// @namespace      samequizy.pl utils
-// @match          https://samequizy.pl/*
-// @icon           https://www.google.com/s2/favicons?sz=64&domain=samequizy.pl
-// @grant          none
-// @version        2.1.0
-// @author         eye-wave
-// @license GPL    3.0
-// @description    tworzy przycisk do natychmiastowego rozwiązania quizu
-// @description:en creates a button for solving the quiz instantly
-// ==/UserScript==
-
 const IMAGE_HEIGHT = 96
 
 function createButton() {
@@ -64,7 +50,7 @@ function createModal(quizdata) {
     "border:0",
   ]
 
-  dialog.style = dialogStyles.join(";")
+  dialog.setAttribute("style", dialogStyles.join(";"))
 
   function createAnswerElement(img, id, title) {
     const div = document.createElement("div")

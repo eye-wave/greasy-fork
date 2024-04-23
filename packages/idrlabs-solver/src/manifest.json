@@ -1,0 +1,11 @@
+{
+  "name": "idrlabs.com - Solver",
+  "namespace": "idrlabs.com utils",
+  "match": "https://www.idrlabs.com/*/test.php",
+  "icon": "https://www.google.com/s2/favicons?sz=64&domain=idrlabs.com",
+  "grant": "none",
+  "version": "$package.version",
+  "author": "$package.author.name",
+  "license": "$package.license",
+  "description": "Creates a button to solve the quiz with random answers."
+}

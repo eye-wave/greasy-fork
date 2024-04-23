@@ -1,11 +1,22 @@
 {
   "name": "greasyfork-scripts",
+  "description": "collection of my user scripts for greasyfork",
   "private": true,
   "scripts": {
-    "format": "biome format . --write",
-    "lint": "biome lint . --apply-unsafe || true"
+    "format": "turbo run format",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "build": "turbo run build"
   },
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ],
   "devDependencies": {
-    "@biomejs/biome": "^1.6.2"
-  }
+    "turbo": "^1.13.2"
+  },
+  "workspaces": [
+    "packages/*",
+    "scripts/*"
+  ],
+  "license": "GPL-3.0+"
 }

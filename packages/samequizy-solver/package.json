@@ -1,0 +1,21 @@
+{
+  "name": "@packages/samequizy-solver",
+  "version": "2.1.0",
+  "module": "src/index.ts",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "format": "biome format . --write",
+    "lint": "biome lint . --apply-unsafe",
+    "test": "bun test --coverage",
+    "build": "builder"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.1",
+    "@scripts/build": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "license": "GPL-3.0+"
+}

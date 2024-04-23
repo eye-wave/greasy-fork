@@ -1,0 +1,24 @@
+{
+  "name": "@scripts/build",
+  "main": "bin/builder.ts",
+  "type": "module",
+  "bin": {
+    "builder": "bin/builder.ts"
+  },
+  "scripts": {
+    "format": "biome format . --write",
+    "lint": "biome lint . --apply-unsafe",
+    "test": "bun test --coverage"
+  },
+  "dependencies": {
+    "esbuild": "^0.20.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.1",
+    "@types/bun": "1.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "license": "GPL-3.0+"
+}

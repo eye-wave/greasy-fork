@@ -1,15 +1,3 @@
-// ==UserScript==
-// @name        fandom.com - Remove bloatware
-// @namespace   Violentmonkey Scripts
-// @match       https://*.fandom.com/*
-// @icon        https://www.google.com/s2/favicons?sz=64&domain=fandom.com
-// @grant       none
-// @version     2.0.0
-// @author      eye-wave
-// @license GPL 3.0
-// @description removes unnecessary elements from fandom website, leaving only what's important
-// ==/UserScript==
-
 const d = document
 
 function $(query, all = false) {
