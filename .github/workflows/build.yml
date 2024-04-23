@@ -9,14 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        workspace:
-          - fandom-debloat
-          - idrlabs-solver
-          - samequizy-autoplay
-          - samequizy-solver
-
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
@@ -27,4 +19,4 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
         with:
-          artifacts: "release.tar.gz,packages/${{ matrix.workspace }}/script.user.js"
+          artifacts: "release.tar.gz,**/script.user.js"
