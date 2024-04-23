@@ -8,6 +8,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+    matrix:
+      workspace:
+        - packages/fandom-debloat
+        - packages/idrlabs-solver
+        - packages/samequizy-autoplay
+        - packages/samequizy-solver
+
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
@@ -15,9 +24,8 @@ jobs:
       - run: bun install
       - run: bun run build
 
-      - name: Create new branch
-        run: |
-          git checkout -b build-output
-          git add .
-          git commit -m "Build output"
-          git push origin build-output
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.workspace }}-user-script
+          path: dist/user.script.js
