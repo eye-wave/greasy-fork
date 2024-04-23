@@ -12,10 +12,10 @@ jobs:
     strategy:
       matrix:
         workspace:
-          - packages/fandom-debloat
-          - packages/idrlabs-solver
-          - packages/samequizy-autoplay
-          - packages/samequizy-solver
+          - fandom-debloat
+          - idrlabs-solver
+          - samequizy-autoplay
+          - samequizy-solver
 
     steps:
       - uses: actions/checkout@v4
@@ -28,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.workspace }}-user-script
-          path: ${{ matrix.workspace }}/dist
+          path: packages/${{ matrix.workspace }}/dist
