@@ -25,4 +25,4 @@ jobs:
           removeArtifacts: true
           replacesArtifacts: true
           tag: Latest_Release
-          artifacts: "release.tar.gz,**/script.user.js"
+          artifacts: "release.tar.gz,**/*.userscript.js"

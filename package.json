@@ -6,7 +6,8 @@
     "format": "turbo run format",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "clean": "find . -type d -name 'dist' -exec rm -r {} \\;"
   },
   "trustedDependencies": [
     "@biomejs/biome"

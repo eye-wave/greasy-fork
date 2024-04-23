@@ -6,7 +6,7 @@
     "format": "biome format . --write",
     "lint": "biome lint . --apply-unsafe",
     "test": "bun test --coverage",
-    "build": "builder"
+    "build": "builder -o dist/fandom-debloat.userscript.js"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.1",
