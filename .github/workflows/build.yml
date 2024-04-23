@@ -2,8 +2,8 @@ name: Build user scripts
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - main:
 
 jobs:
   build:
@@ -18,7 +18,17 @@ jobs:
       - run: bun install
       - run: bun run build
 
+      - name: Get Commit Info
+        id: commit_info
+        run: |
+          echo "::set-output name=commit_message::${{ github.event.head_commit.message }}"
+          echo "::set-output name=commit_hash::${{ github.sha }}"
+
       - name: Create Release
         uses: ncipollo/release-action@v1.14.0
         with:
+          allowUpdates: true
+          removeArtifacts: true
+          replacesArtifacts: true
+          tag: ${{ steps.commit_info.outputs.commit_hash }}
           artifacts: "release.tar.gz,**/script.user.js"
