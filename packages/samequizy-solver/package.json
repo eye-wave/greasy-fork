@@ -1,6 +1,6 @@
 {
   "name": "@packages/samequizy-solver",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "module": "src/index.ts",
   "main": "src/index.ts",
   "type": "module",
