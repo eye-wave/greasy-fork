@@ -2,7 +2,7 @@
   "name": "samequizy.pl - Quiz solver",
   "namespace": "samequizy.pl utils",
   "match": "https://samequizy.pl/*",
-  "icon": "https://www.google.com/s2/favicons?sz=64&domain=samequizy.pl",
+  "icon": "https://raw.githubusercontent.com/eye-wave/greasy-fork/main/packages/samequizy-solver/assets/icon.svg",
   "description": "Creates a button for solving the quiz instantly.",
   "extends": ["../../../manifest.json", "./manifest.locale.json"]
 }

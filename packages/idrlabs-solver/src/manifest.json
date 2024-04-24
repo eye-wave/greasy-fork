@@ -2,7 +2,7 @@
   "name": "idrlabs.com - Solver",
   "namespace": "idrlabs.com utils",
   "match": "https://www.idrlabs.com/*.php",
-  "icon": "https://www.google.com/s2/favicons?sz=64&domain=idrlabs.com",
+  "icon": "https://raw.githubusercontent.com/eye-wave/greasy-fork/main/packages/idrlabs-solver/assets/icon.svg",
   "description": "Creates a button to solve the quiz with random answers.",
   "extends": ["../../../manifest.json"]
 }
