@@ -1,4 +1,4 @@
-# <img src="./assets/icon.svg" height=64> samequizy.pl - Quiz solver
+# <img src="https://raw.githubusercontent.com/eye-wave/greasy-fork/main/packages/samequizy-solver/assets/icon.svg" height=64> samequizy.pl - Quiz solver
 •︎ [Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/samequizy-solver)
 •︎ [Link](https://greasyfork.org/en/scripts/493333-samequizy-pl-quiz-solver)
 •︎
