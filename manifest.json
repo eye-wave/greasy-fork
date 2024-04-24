@@ -1,0 +1,6 @@
+{
+  "grant": "none",
+  "version": "$package.version",
+  "author": "$package.author.name",
+  "license": "$package.license"
+}

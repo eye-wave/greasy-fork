@@ -3,9 +3,6 @@
   "namespace": "fandom.com utils",
   "match": "https://*.fandom.com/*",
   "icon": "https://www.google.com/s2/favicons?sz=64&domain=fandom.com",
-  "grant": "none",
-  "version": "$package.version",
-  "author": "$package.author.name",
-  "license": "$package.license",
-  "description": "Removes unnecessary elements from fandom website, leaving only what's important."
+  "description": "Removes unnecessary elements from fandom website, leaving only what's important.",
+  "extends": ["../../../manifest.json"]
 }

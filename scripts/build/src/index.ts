@@ -18,7 +18,7 @@ const { outputFiles } = await ESBuild.build({
 if (outputFiles.length !== 1) throw Error(`Wrong number of output files for: ${entrypoint} (${outputFiles.length})`)
 
 const [buildArtifact] = outputFiles
-const manifest = createManifest(await Bun.file(manifestSrc).json())
+const manifest = await createManifest(manifestSrc)
 const file = Buffer.concat([Buffer.from(manifest), Buffer.from(buildArtifact.contents)])
 
 await Bun.write(outfile, file)

@@ -4,10 +4,7 @@
   "namespace": "samequizy.pl utils",
   "match": "https://samequizy.pl/*",
   "icon": "https://www.google.com/s2/favicons?sz=64&domain=samequizy.pl",
-  "grant": "none",
-  "version": "$package.version",
-  "author": "$package.author.name",
-  "license": "$package.license",
   "description": "Tworzy przycisk do natychmiastowego rozwiązania quizu.",
-  "description:en": "Creates a button for solving the quiz instantly."
+  "description:en": "Creates a button for solving the quiz instantly.",
+  "extends": ["../../../manifest.json"]
 }
