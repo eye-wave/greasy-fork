@@ -18,11 +18,14 @@ jobs:
       - run: bun install
       - run: bun run build
 
-      - name: Create Release
-        uses: ncipollo/release-action@v1.14.0
-        with:
-          allowUpdates: true
-          removeArtifacts: true
-          replacesArtifacts: true
-          tag: Latest_Release
-          artifacts: "**/*.user.js"
+      - name: Setup git
+        run: |-
+          git config --local user.email github-actions[bot]@users.noreply.github.com
+          git config --local user.name github-actions[bot]
+          git config --global core.autocrlf true
+          git config --global core.safecrlf false
+      
+      - name: Move
+        run: |-
+          git checkout build-output
+          find . -type f -path '*dist*' -name '*.user.js' -exec cp {} . \;
