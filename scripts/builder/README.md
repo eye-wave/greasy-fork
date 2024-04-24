@@ -53,6 +53,7 @@ Options:
   --watch                    watch for changes
 
   --web                      serve file on a web server
+  --open                     open server url in a web browser
   -p --port                  port number of the web server
 
   --no-build                 don't bundle the code, just embed the manifest.

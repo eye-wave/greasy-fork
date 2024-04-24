@@ -9,6 +9,7 @@ export type CLIOptions = {
   webPort: number
   watch: boolean
   web: boolean
+  webOpen: boolean
 }
 
 const usage = `Usage: builder [OPTIONS] -i <INPUT> -o <OUTPUT> -m <MANIFEST>
@@ -21,6 +22,7 @@ Options:
   --watch                    watch for changes
 
   --web                      serve file on a web server
+  --open                     open server url in a web browser
   -p --port                  port number of the web server
 
   --no-build                 don't bundle the code, just embed the manifest.
@@ -32,7 +34,7 @@ Options:
 `
 
 export async function parseFlags(args: string[]) {
-  const options: CLIOptions = { noBuild: false, webPort: 3000, watch: false, web: false }
+  const options: CLIOptions = { noBuild: false, webPort: 3000, watch: false, web: false, webOpen: false }
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i]
@@ -81,6 +83,10 @@ export async function parseFlags(args: string[]) {
 
       case "--web":
         options.web = true
+        break
+
+      case "--open":
+        options.webOpen = true
         break
 
       case "--watch":

@@ -1,9 +1,10 @@
-import * as Bun from "bun"
-import * as ESBuild from "esbuild"
+import { $ } from "bun"
 import { createManifest } from "./manifest"
 import { findEntry } from "./entry"
 import { parseFlags } from "./flags"
 import { startServer } from "./web"
+import * as Bun from "bun"
+import * as ESBuild from "esbuild"
 import devCommentsPlugin from "./plugins/delete"
 
 const {
@@ -14,6 +15,7 @@ const {
   watch,
   web,
   webPort,
+  webOpen,
 } = await parseFlags(process.argv)
 
 let contents: string
@@ -39,7 +41,10 @@ if (noBuild) {
     const ctx = await ESBuild.context({ ...buildOptions, logLevel: "info", outfile, write: true })
     ctx.watch()
 
-    if (web) startServer(webPort, manifestSrc)
+    if (web) {
+      startServer(webPort, manifestSrc)
+      if (webOpen) await $`xdg-open http://localhost:${webPort}/${outfile}`
+    }
   } else if (web) throw Error("Serving files is only avaiable in watch mode")
 
   const { outputFiles = [] } = await ESBuild.build(buildOptions)
