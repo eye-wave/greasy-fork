@@ -1,7 +1,7 @@
 {
   "name": "@scripts/build",
   "main": "bin/builder.ts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "bin": {
     "builder": "bin/builder.ts"

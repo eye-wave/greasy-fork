@@ -22,7 +22,7 @@ export function createManifest(data: Record<string, string>) {
       modifiedValue = modifiedValue.replace(match, newValue)
     }
 
-    const spaces = maxLengthKey + 1 - key.length
+    const spaces = maxLengthKey + 4 - key.length
     userscriptManifest.push(`// @${key}${" ".repeat(spaces)}${modifiedValue}`)
   }
 
