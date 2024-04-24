@@ -25,7 +25,10 @@ jobs:
           git config --global core.autocrlf true
           git config --global core.safecrlf false
       
-      - name: Move
+      - name: Move build artifacts to build-output
         run: |-
           git checkout build-output
           find . -type f -path '*dist*' -name '*.user.js' -exec cp {} . \;
+
+          git commit -m "Upload build outputs"
+          git push origin build-output
