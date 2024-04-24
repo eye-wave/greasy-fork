@@ -1,10 +1,8 @@
 {
   "name": "samequizy.pl - Autoplay off",
-  "name:en": "samequizy.pl - Autoplay off",
   "namespace": "samequizy.pl utils",
   "match": "https://samequizy.pl/*",
   "icon": "https://www.google.com/s2/favicons?sz=64&domain=samequizy.pl",
-  "description": "Wyłącza automatyczne załączanie nowego quizu.",
-  "description:en": "Disables automatic loading of new quizzes.",
-  "extends": ["../../../manifest.json"]
+  "description": "Disables automatic loading of new quizzes.",
+  "extends": ["../../../manifest.json", "./manifest.locale.json"]
 }
