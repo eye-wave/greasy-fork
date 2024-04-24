@@ -6,6 +6,9 @@ export type CLIOptions = {
   manifestSrc?: string
   outfile?: string
   noBuild: boolean
+  webPort: number
+  watch: boolean
+  web: boolean
 }
 
 const usage = `Usage: builder [OPTIONS] -i <INPUT> -o <OUTPUT> -m <MANIFEST>
@@ -14,6 +17,11 @@ Options:
   -i, --input <INPUT>        entrypoint path
   -o, --output <OUTPUT>      build output path
   -m, --manifest <MANIFEST>  manifest file with required metadata
+
+  --watch                    watch for changes
+
+  --web                      serve file on a web server
+  -p --port                  port number of the web server
 
   --no-build                 don't bundle the code, just embed the manifest.
                              it copies unmodified input with manifest at the top
@@ -24,7 +32,7 @@ Options:
 `
 
 export async function parseFlags(args: string[]) {
-  const options: CLIOptions = { noBuild: false }
+  const options: CLIOptions = { noBuild: false, webPort: 3000, watch: false, web: false }
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i]
@@ -62,6 +70,21 @@ export async function parseFlags(args: string[]) {
         {
           options.outfile = args[++i]
         }
+        break
+
+      case "--port":
+      case "-p":
+        {
+          options.outfile = args[++i]
+        }
+        break
+
+      case "--web":
+        options.web = true
+        break
+
+      case "--watch":
+        options.watch = true
         break
 
       case "--no-build":

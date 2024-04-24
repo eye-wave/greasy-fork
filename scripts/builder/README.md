@@ -50,6 +50,11 @@ Options:
   -o, --output <OUTPUT>      build output path
   -m, --manifest <MANIFEST>  manifest file with required metadata
 
+  --watch                    watch for changes
+
+  --web                      serve file on a web server
+  -p --port                  port number of the web server
+
   --no-build                 don't bundle the code, just embed the manifest.
                              it copies unmodified input with manifest at the top
                              into specified output
