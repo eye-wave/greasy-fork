@@ -1,4 +1,4 @@
-# <img src="./assets/icon.svg" height=64> idrlabs.com - Solver
+# <img src="https://raw.githubusercontent.com/eye-wave/greasy-fork/main/packages/idrlabs-solver/assets/icon.svg" height=64> idrlabs.com - Solver
 •︎ [Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/idrlabs-solver)
 •︎ [Link](https://greasyfork.org/en/scripts/493331-idrlabs-com-solver)
 •︎
