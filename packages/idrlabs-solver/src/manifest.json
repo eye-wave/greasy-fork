@@ -1,7 +1,7 @@
 {
   "name": "idrlabs.com - Solver",
   "namespace": "idrlabs.com utils",
-  "match": "https://www.idrlabs.com/*/test.php",
+  "match": "https://www.idrlabs.com/*.php",
   "icon": "https://www.google.com/s2/favicons?sz=64&domain=idrlabs.com",
   "description": "Creates a button to solve the quiz with random answers.",
   "extends": ["../../../manifest.json"]

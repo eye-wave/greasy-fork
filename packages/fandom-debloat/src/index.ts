@@ -1,9 +1,5 @@
-const d = document
-
-function $(query, all = false) {
-  if (all) return d.querySelectorAll(query)
-  return d.querySelector(query)
-}
+import { $, $s } from "@repo/utils"
+import "./window"
 
 const toResize = [".fandom-community-header__background", ".main-container"]
 const massRemove = ["iframe", "link[as='script']", "meta", "script", "style:not([type='text/css'])"]
@@ -34,15 +30,9 @@ removeBloatware()
  * declared in "removeListSingle" list
  */
 function removeBloatware() {
-  removeListSingle.forEach(q => $(q)?.remove())
-  massRemove.forEach(q => $(q, true).forEach(e => e?.remove()))
-  for (const q of toResize) {
-    const el = $(q)
-    if (!el) continue
-
-    el.style.width = "100%"
-    el.style.margin = 0
-  }
+  removeListSingle.forEach(q => $s(q)?.remove())
+  massRemove.forEach(q => $(q).forEach(e => e?.remove()))
+  toResize.forEach(q => $s<HTMLElement>(q)?.setAttribute("style", "width:100%;margin:0"))
 }
 
 removeExcessiveBodyClassNames()
@@ -52,16 +42,16 @@ removeExcessiveBodyClassNames()
  * after removing cookie popup
  */
 function removeExcessiveBodyClassNames() {
-  for (const c of d.body.classList) {
+  for (const c of document.body.classList) {
     if (c.includes("skin-fandom")) continue
-    d.body.classList.remove(c)
+    document.body.classList.remove(c)
   }
 }
 
 function removeExcessiveHtmlAttrs() {
-  d.documentElement.removeAttribute("class")
-  d.documentElement.removeAttribute("dir")
-  d.documentElement.removeAttribute("style")
+  document.documentElement.removeAttribute("class")
+  document.documentElement.removeAttribute("dir")
+  document.documentElement.removeAttribute("style")
 }
 
 new MutationObserver(mutationsList => {
@@ -72,11 +62,9 @@ new MutationObserver(mutationsList => {
       removeExcessiveHtmlAttrs()
     }
   }
-}).observe(d.documentElement, {
+}).observe(document.documentElement, {
   childList: true,
   subtree: true,
   attributes: true,
   attributeOldValue: true,
 })
-
-window.ads = undefined

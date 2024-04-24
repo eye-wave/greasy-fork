@@ -1,6 +1,6 @@
 {
   "name": "@packages/idrlabs-solver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "module": "index.ts",
   "type": "module",
   "author": {
@@ -12,6 +12,9 @@
     "lint": "biome lint . --apply-unsafe",
     "test": "bun test --coverage",
     "build": "builder -o dist/idrlabs-solver.user.js"
+  },
+  "dependencies": {
+    "@repo/utils": "workspace:*"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.1",
