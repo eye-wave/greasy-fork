@@ -1,4 +1,4 @@
-# ![fandom.com](https://www.google.com/s2/favicons?sz=32&domain=fandom.com) Fandom.com - Debloater
+# <img src="./assets/icon.svg" height=64> Fandom.com - Debloater
 •︎ [Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/fandom-debloat)
 •︎ [Link](https://greasyfork.org/en/scripts/493330-fandom-com-remove-bloatware)
 •︎

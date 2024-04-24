@@ -1,4 +1,4 @@
-# ![idrlabs.com](https://www.google.com/s2/favicons?sz=32&domain=idrlabs.com) idrlabs.com - Solver
+# <img src="./assets/icon.svg" height=64> idrlabs.com - Solver
 •︎ [Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/idrlabs-solver)
 •︎ [Link](https://greasyfork.org/en/scripts/493331-idrlabs-com-solver)
 •︎

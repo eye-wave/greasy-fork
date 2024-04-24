@@ -1,4 +1,4 @@
-# ![samequizy.pl](https://www.google.com/s2/favicons?sz=16&domain=samequizy.pl) samequizy.pl - Autoplay off
+# <img src="./assets/icon.svg" height=64> samequizy.pl - Autoplay off
 •︎ [Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/samequizy-autoplay)
 •︎ [Link](https://greasyfork.org/en/scripts/493332-samequizy-pl-autoplay-off)
 •︎
