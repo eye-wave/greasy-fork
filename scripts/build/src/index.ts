@@ -8,6 +8,7 @@ const { entrypoint, manifestSrc = "src/manifest.json", outfile = "dist/script.us
 
 const { outputFiles } = await ESBuild.build({
   entryPoints: [entrypoint ?? (await findEntry())],
+  bundle: true,
   minify: false,
   write: false,
   loader: {
