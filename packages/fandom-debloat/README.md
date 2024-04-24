@@ -1,4 +1,4 @@
-# <img src="./assets/icon.svg" height=64> Fandom.com - Debloater
+# <img src="https://raw.githubusercontent.com/eye-wave/greasy-fork/main/packages/fandom-debloat/assets/icon.svg" height=64> Fandom.com - Debloater
 •︎ [Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/fandom-debloat)
 •︎ [Link](https://greasyfork.org/en/scripts/493330-fandom-com-remove-bloatware)
 •︎
