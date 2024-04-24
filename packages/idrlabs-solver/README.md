@@ -1,5 +1,7 @@
 # ![idrlabs.com](https://www.google.com/s2/favicons?sz=32&domain=idrlabs.com) idrlabs.com - Solver
-[Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/idrlabs-solver)
+•︎ [Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/idrlabs-solver)
+•︎ [Link](https://greasyfork.org/en/scripts/493331-idrlabs-com-solver)
+•︎
 
 ![Greasy Fork Downloads](https://img.shields.io/greasyfork/dt/493331-idrlabs-com-solver)
 ![Greasy Fork Downloads](https://img.shields.io/greasyfork/v/493331-idrlabs-com-solver)

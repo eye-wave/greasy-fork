@@ -1,5 +1,7 @@
 # ![fandom.com](https://www.google.com/s2/favicons?sz=32&domain=fandom.com) Fandom.com - Debloater
-[Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/fandom-debloat)
+•︎ [Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/fandom-debloat)
+•︎ [Link](https://greasyfork.org/en/scripts/493330-fandom-com-remove-bloatware)
+•︎
 
 ![Greasy Fork Downloads](https://img.shields.io/greasyfork/dt/493330-fandom-com-remove-bloatware)
 ![Greasy Fork Downloads](https://img.shields.io/greasyfork/v/493330-fandom-com-remove-bloatware)

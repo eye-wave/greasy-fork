@@ -1,6 +1,7 @@
 # ![samequizy.pl](https://www.google.com/s2/favicons?sz=16&domain=samequizy.pl) samequizy.pl - Quiz solver
-
-[Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/samequizy-solver)
+•︎ [Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/samequizy-solver)
+•︎ [Link](https://greasyfork.org/en/scripts/493333-samequizy-pl-quiz-solver)
+•︎
 
 ![Greasy Fork Downloads](https://img.shields.io/greasyfork/dt/493333-samequizy-pl-quiz-solver)
 ![Greasy Fork Downloads](https://img.shields.io/greasyfork/v/493333-samequizy-pl-quiz-solver)
