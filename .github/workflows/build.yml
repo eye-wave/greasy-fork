@@ -18,17 +18,11 @@ jobs:
       - run: bun install
       - run: bun run build
 
-      - name: Setup git
-        run: |-
-          git config --local user.email github-actions[bot]@users.noreply.github.com
-          git config --local user.name github-actions[bot]
-          git config --global core.autocrlf true
-          git config --global core.safecrlf false
-      
-      - name: Move build artifacts to build-output
-        run: |-
-          git checkout build-output
-          find . -type f -path '*dist*' -name '*.user.js' -exec cp {} . \;
-
-          git commit -m "Upload build outputs"
-          git push origin build-output
+      - name: Create Release
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          allowUpdates: true
+          removeArtifacts: true
+          replacesArtifacts: true
+          tag: Latest_Release
+          artifacts: "**/*.user.js"
