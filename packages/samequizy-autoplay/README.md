@@ -1,4 +1,4 @@
-# <img src="./assets/icon.svg" height=64> samequizy.pl - Autoplay off
+# <img src="https://raw.githubusercontent.com/eye-wave/greasy-fork/main/packages/samequizy-autoplay/assets/icon.svg" height=64> samequizy.pl - Autoplay off
 •︎ [Source Code](https://github.com/eye-wave/greasy-fork/tree/main/packages/samequizy-autoplay)
 •︎ [Link](https://greasyfork.org/en/scripts/493332-samequizy-pl-autoplay-off)
 •︎
