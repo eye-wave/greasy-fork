@@ -4,6 +4,7 @@ import { createManifest } from "./manifest"
 import { findEntry } from "./entry"
 import { parseFlags } from "./flags"
 import { startServer } from "./web"
+import devCommentsPlugin from "./plugins/delete"
 
 const {
   entrypoint,
@@ -27,18 +28,18 @@ if (noBuild) {
     bundle: true,
     minify: false,
     write: false,
+    format: "esm",
     loader: {
       ".svg": "text",
     },
+    plugins: [devCommentsPlugin],
   }
 
   if (watch) {
-    const ctx = await ESBuild.context({ ...buildOptions })
-    await ctx.watch()
+    const ctx = await ESBuild.context({ ...buildOptions, logLevel: "info", outfile, write: true })
+    ctx.watch()
 
-    if (web) {
-      const server = startServer(webPort)
-    }
+    if (web) startServer(webPort, manifestSrc)
   } else if (web) throw Error("Serving files is only avaiable in watch mode")
 
   const { outputFiles = [] } = await ESBuild.build(buildOptions)
@@ -49,5 +50,7 @@ if (noBuild) {
   contents = Buffer.from(outputFiles[0].contents).toString()
 }
 
-const manifest = await createManifest(manifestSrc)
-await Bun.write(outfile, manifest + contents)
+if (!watch) {
+  const manifest = await createManifest(manifestSrc)
+  await Bun.write(outfile, manifest + contents)
+}
