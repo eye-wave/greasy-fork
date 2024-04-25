@@ -1,9 +1,10 @@
 import * as fs from "node:fs/promises"
+import { createManifest } from "./manifest"
 
-export function startServer(port: number) {
+export function startServer(port: number, manifestSrc: string) {
   const server = Bun.serve({
-    hostname: "localhost",
     port,
+    hostname: "localhost",
     async fetch(req: Request) {
       const pth = new URL(req.url).pathname.replace("/", "")
 
@@ -15,7 +16,13 @@ export function startServer(port: number) {
         return new Response("-1", { status: 404 })
       }
 
-      return new Response(Bun.file(pth))
+      const manifest = await createManifest(manifestSrc)
+      return new Response(`${manifest}\n\n${await Bun.file(pth).text()}`, {
+        headers: {
+          "access-control-allow-origin": "*",
+          "cache-control": "max-age=0",
+        },
+      })
     },
   })
 

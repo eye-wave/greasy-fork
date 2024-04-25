@@ -1,9 +1,11 @@
-import * as Bun from "bun"
-import * as ESBuild from "esbuild"
+import { $ } from "bun"
 import { createManifest } from "./manifest"
 import { findEntry } from "./entry"
 import { parseFlags } from "./flags"
 import { startServer } from "./web"
+import * as Bun from "bun"
+import * as ESBuild from "esbuild"
+import devCommentsPlugin from "./plugins/delete"
 
 const {
   entrypoint,
@@ -13,6 +15,7 @@ const {
   watch,
   web,
   webPort,
+  webOpen,
 } = await parseFlags(process.argv)
 
 let contents: string
@@ -27,17 +30,20 @@ if (noBuild) {
     bundle: true,
     minify: false,
     write: false,
+    format: "esm",
     loader: {
       ".svg": "text",
     },
+    plugins: [devCommentsPlugin],
   }
 
   if (watch) {
-    const ctx = await ESBuild.context({ ...buildOptions })
-    await ctx.watch()
+    const ctx = await ESBuild.context({ ...buildOptions, logLevel: "info", outfile, write: true })
+    ctx.watch()
 
     if (web) {
-      const server = startServer(webPort)
+      startServer(webPort, manifestSrc)
+      if (webOpen) await $`xdg-open http://localhost:${webPort}/${outfile}`
     }
   } else if (web) throw Error("Serving files is only avaiable in watch mode")
 
@@ -49,5 +55,7 @@ if (noBuild) {
   contents = Buffer.from(outputFiles[0].contents).toString()
 }
 
-const manifest = await createManifest(manifestSrc)
-await Bun.write(outfile, manifest + contents)
+if (!watch) {
+  const manifest = await createManifest(manifestSrc)
+  await Bun.write(outfile, manifest + contents)
+}

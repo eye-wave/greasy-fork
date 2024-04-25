@@ -1,8 +1,8 @@
 {
+  "$schema": "../../../scripts/builder/src/manifest/schema.json",
   "name": "fandom.com - Remove bloatware",
   "namespace": "fandom.com utils",
   "match": "https://*.fandom.com/*",
-  "icon": "https://raw.githubusercontent.com/eye-wave/greasy-fork/main/packages/fandom-debloat/assets/icon.svg",
   "description": "Removes unnecessary elements from fandom website, leaving only what's important.",
   "extends": ["../../../manifest.json"]
 }
