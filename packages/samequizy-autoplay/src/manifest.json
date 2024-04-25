@@ -1,8 +1,8 @@
 {
+  "$schema": "../../../scripts/builder/src/manifest/schema.json",
   "name": "samequizy.pl - Autoplay off",
   "namespace": "samequizy.pl utils",
   "match": "https://samequizy.pl/*",
-  "icon": "https://raw.githubusercontent.com/eye-wave/greasy-fork/main/packages/samequizy-autoplay/assets/icon.svg",
   "description": "Disables automatic loading of new quizzes.",
   "extends": ["../../../manifest.json", "./manifest.locale.json"]
 }

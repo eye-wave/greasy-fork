@@ -1,8 +1,12 @@
 {
   "name": "@scripts/build",
   "main": "bin/builder.ts",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
+  "author": {
+    "name": "eye-wave",
+    "url": "https://github.com/eye-wave"
+  },
   "bin": {
     "builder": "bin/builder.ts"
   },
