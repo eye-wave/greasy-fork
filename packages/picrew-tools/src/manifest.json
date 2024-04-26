@@ -1,0 +1,9 @@
+{
+  "$schema": "../../../scripts/builder/src/manifest/schema.json",
+  "name": "Picrew tools",
+  "namespace": "picrew utils",
+  "match": "https://picrew.me/*",
+  "require": ["https://vanjs.org/code/van-1.5.0.nomodule.min.js"],
+  "description": "Various tools for picrew avatar generator",
+  "extends": ["../../../manifest.json", "./manifest.locale.json"]
+}
