@@ -11,7 +11,7 @@
     "update": "./scripts/update.sh"
   },
   "devDependencies": {
-    "turbo": "^1.13.2"
+    "turbo": "^1.13.3"
   },
   "packageManager": "bun@1.1.4",
   "workspaces": [
