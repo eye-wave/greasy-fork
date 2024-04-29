@@ -4,5 +4,5 @@
   "namespace": "fandom.com utils",
   "match": "https://*.fandom.com/*",
   "description": "Removes unnecessary elements from fandom website, leaving only what's important.",
-  "extends": ["../../../manifest.json"]
+  "extends": ["../../../manifest.json", "./manifest.locale.json"]
 }
