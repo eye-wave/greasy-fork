@@ -1,0 +1,14 @@
+{
+  "description:de": "Entfernt unnötige Elemente von der Fandom-Website und lässt nur das Wichtige übrig.",
+  "description:es": "Elimina elementos innecesarios del sitio web de fandom, dejando solo lo importante.",
+  "description:fr": "Supprime les éléments inutiles du site web de fandom, ne laissant que l'essentiel.",
+  "description:jp": "ファンダムのウェブサイトから不必要な要素を削除し、重要なもののみを残します。",
+  "description:pl": "Usuwa zbędne elementy ze strony fandomu, pozostawiając tylko to, co ważne.",
+  "description:ru": "Удаляет ненужные элементы с веб-сайта фандома, оставляя только то, что важно.",
+  "name:de": "fandom.com - Bloatware entfernen",
+  "name:es": "fandom.com - Eliminar el software basura",
+  "name:fr": "fandom.com - Supprimer les logiciels superflus",
+  "name:jp": "fandom.com - お膨らみを取り除く",
+  "name:pl": "fandom.com - Uprość UI",
+  "name:ru": "fandom.com - Удаление ненужного программного обеспечения"
+}

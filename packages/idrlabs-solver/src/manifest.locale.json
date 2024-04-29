@@ -1,0 +1,14 @@
+{
+  "description:de": "Erstellt eine Schaltfläche, um das Quiz mit zufälligen Antworten zu lösen.",
+  "description:es": "Crea un botón para resolver el cuestionario con respuestas aleatorias.",
+  "description:fr": "Crée un bouton pour résoudre le quiz avec des réponses aléatoires.",
+  "description:jp": "ランダムな回答でクイズを解くためのボタンを作成します。",
+  "description:pl": "Tworzy przycisk do rozwiązania quizu z losowymi odpowiedziami.",
+  "description:ru": "Создает кнопку для решения викторины с случайными ответами.",
+  "name:de": "idrlabs.com - Solver",
+  "name:es": "idrlabs.com - Solucionador",
+  "name:fr": "idrlabs.com - Solveur",
+  "name:jp": "idrlabs.com - ソルバー",
+  "name:pl": "idrlabs.com - Solver",
+  "name:ru": "idrlabs.com - Решатель"
+}

@@ -4,5 +4,5 @@
   "namespace": "idrlabs.com utils",
   "match": "https://www.idrlabs.com/*.php",
   "description": "Creates a button to solve the quiz with random answers.",
-  "extends": ["../../../manifest.json"]
+  "extends": ["../../../manifest.json", "./manifest.locale.json"]
 }
