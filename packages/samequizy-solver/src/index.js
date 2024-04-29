@@ -1,5 +1,5 @@
-import quitIcon from "./icons/quit.svg"
-import randomIcon from "./icons/random.svg"
+import QuitIcon from "~icons/material-symbols/close-small-outline-rounded"
+import RandomIcon from "~icons/game-icons/perspective-dice-six-faces-random"
 
 const IMAGE_HEIGHT = 96
 
@@ -79,10 +79,10 @@ function createModal(quizdata) {
   })
 
   elements.push(
-    createAnswerElement(randomIcon.replace(/height="\d+"/, `height="${IMAGE_HEIGHT}"`), "ans__random", "Losowa")
+    createAnswerElement(RandomIcon.replace(/height="\d+"/, `height="${IMAGE_HEIGHT}"`), "ans__random", "Losowa")
   )
 
-  elements.push(createAnswerElement(quitIcon.replace(/height="\d+"/, `height="${IMAGE_HEIGHT}"`), "act__quit", ""))
+  elements.push(createAnswerElement(QuitIcon.replace(/height="\d+"/, `height="${IMAGE_HEIGHT}"`), "act__quit", ""))
 
   elements.forEach(element => {
     dialog.append(element)
