@@ -87,7 +87,7 @@ describe("All at once", async () => {
   const example = "src/manifest/extension2.test.json"
   const expected = `// ==UserScript==
 // @grant          none
-// @version        0.2.0
+// @version        0.4.0
 // @author         eye-wave
 // @icon           https://awesomeimagehosting.com/builder/icon.svg
 // @license        GPL-3.0+

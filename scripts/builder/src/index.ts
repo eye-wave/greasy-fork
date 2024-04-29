@@ -5,7 +5,8 @@ import { parseFlags } from "./flags"
 import { startServer } from "./web"
 import * as Bun from "bun"
 import * as ESBuild from "esbuild"
-import devCommentsPlugin from "./plugins/delete"
+import deleteLinePlugin from "./plugins/delete"
+import Icons from "unplugin-icons/esbuild"
 
 const {
   entrypoint,
@@ -34,7 +35,7 @@ if (noBuild) {
     loader: {
       ".svg": "text",
     },
-    plugins: [devCommentsPlugin],
+    plugins: [deleteLinePlugin, Icons({ compiler: "raw" })],
   }
 
   if (watch) {

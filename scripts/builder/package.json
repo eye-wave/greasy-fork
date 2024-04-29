@@ -1,7 +1,7 @@
 {
   "name": "@scripts/build",
   "main": "bin/builder.ts",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "type": "module",
   "author": {
     "name": "eye-wave",
@@ -16,10 +16,12 @@
     "test": "bun test --coverage"
   },
   "dependencies": {
-    "esbuild": "^0.20.2"
+    "esbuild": "^0.20.2",
+    "unplugin-icons": "^0.18.5"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.1",
+    "@iconify/json": "^2.2.205",
     "@types/bun": "1.1.0"
   },
   "peerDependencies": {
