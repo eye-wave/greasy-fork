@@ -1,4 +1,12 @@
 {
-  "name:pl": "Picrew dotatki",
-  "description:pl": "Różne dodatki do generatora avatarów picrew"
+  "description:de": "Verschiedene Werkzeuge für den Picrew-Avatar-Generator",
+  "description:es": "Varias herramientas para el generador de avatares de Picrew",
+  "description:fr": "Divers outils pour le générateur d'avatars Picrew",
+  "description:ja": "ピクルーアバタージェネレーターのための様々なツール",
+  "description:pl": "Różne dodatki do generatora avatarów picrew",
+  "name:de": "Picrew-Werkzeuge",
+  "name:es": "Herramientas de Picrew",
+  "name:fr": "Outils Picrew",
+  "name:ja": "ピクルーツール",
+  "name:pl": "Picrew dotatki"
 }
