@@ -1,5 +1,6 @@
-import { $, $s } from "@repo/utils"
 import "./window"
+import { $, $s } from "@repo/utils"
+import { fixSearch } from "./search"
 
 const toResize = [".fandom-community-header__background", ".main-container"]
 const massRemove = ["iframe", "link[as='script']", "meta", "script", "style:not([type='text/css'])"]
@@ -56,7 +57,10 @@ function removeExcessiveHtmlAttrs() {
 
 new MutationObserver(mutationsList => {
   for (const mutation of mutationsList) {
-    if (mutation.type === "childList") removeBloatware()
+    if (mutation.type === "childList") {
+      removeBloatware()
+      fixSearch()
+    }
     if (mutation.type === "attributes") {
       removeExcessiveBodyClassNames()
       removeExcessiveHtmlAttrs()
