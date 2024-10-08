@@ -3,3 +3,8 @@ dist/
 node_modules/
 
 !/dist
+*.json
+bun.lockb
+/scripts
+/packages
+/utils
