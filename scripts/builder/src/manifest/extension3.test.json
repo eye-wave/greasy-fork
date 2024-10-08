@@ -1,7 +1,0 @@
-{
-  "grant": "none",
-  "version": "${package.version}",
-  "author": "${package.author.name}",
-  "icon": "https://awesomeimagehosting.com/${dirname}/icon.svg",
-  "license": "${package.license}"
-}

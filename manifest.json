@@ -1,7 +1,0 @@
-{
-  "grant": "none",
-  "version": "${package.version}",
-  "author": "${package.author.name}",
-  "icon": "https://raw.githubusercontent.com/eye-wave/greasy-fork/main/packages/${dirname}/assets/icon.svg",
-  "license": "${package.license}"
-}
