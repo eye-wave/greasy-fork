@@ -20,7 +20,6 @@ const removeListSingle = [
   "#global-explore-navigation",
   "#p-views",
   "#WikiaBar",
-  "body > svg + *",
   "div>div[data-tracking-opt-in-overlay]",
   "footer",
 ]
