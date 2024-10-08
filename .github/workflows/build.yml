@@ -21,11 +21,18 @@ jobs:
       - name: Build all packages
         run: bun run build
 
-      - name: Deploy built files to result branch
+      - name: Setup git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout build-result
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: build-result
+
+      - name: Deploy built files to result branch
+        run: |
           git add dist
           git commit -m "Build and deploy to build-result"
           git push origin build-result --force
