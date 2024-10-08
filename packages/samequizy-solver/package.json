@@ -9,6 +9,7 @@
     "url": "https://github.com/eye-wave"
   },
   "scripts": {
+    "dev": "builder --dev --open",
     "format": "biome format . --write",
     "lint": "biome lint . --apply-unsafe",
     "test": "bun test --coverage",

@@ -19,7 +19,9 @@ Options:
   -o, --output <OUTPUT>      build output path
   -m, --manifest <MANIFEST>  manifest file with required metadata
 
-  --watch                    watch for changes
+  -d, --dev                  run in watch mode with a webserver
+
+  -w, --watch                watch for changes
 
   --web                      serve file on a web server
   --open                     open server url in a web browser
@@ -90,6 +92,13 @@ export async function parseFlags(args: string[]) {
         break
 
       case "--watch":
+      case "-w":
+        options.watch = true
+        break
+      
+      case "--dev":
+      case "-d":
+        options.web = true
         options.watch = true
         break
 
