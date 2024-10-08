@@ -25,7 +25,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b build-result
-          git add .
+          git checkout build-result
+          git add dist
           git commit -m "Build and deploy to build-result"
           git push origin build-result --force
