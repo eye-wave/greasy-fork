@@ -12,7 +12,7 @@
     "format": "biome format . --write",
     "lint": "biome lint . --apply-unsafe",
     "test": "bun test --coverage",
-    "build": "builder -o dist/idrlabs-solver.user.js"
+    "build": "builder -o ../../dist/idrlabs-solver.user.js"
   },
   "dependencies": {
     "@repo/utils": "workspace:*"
