@@ -1,8 +1,8 @@
 {
-  "$schema": "../../../scripts/builder/src/manifest/schema.json",
+  "$schema": "../../scripts/builder/src/manifest/schema.json",
   "name": "samequizy.pl - Autoplay off",
   "namespace": "samequizy.pl utils",
   "match": "https://samequizy.pl/*",
   "description": "Disables automatic loading of new quizzes.",
-  "extends": ["../../../manifest.json", "./manifest.locale.json"]
+  "extends": ["../../manifest.json", "./manifest.locale.json"]
 }

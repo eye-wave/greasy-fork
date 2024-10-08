@@ -10,7 +10,7 @@ import Icons from "unplugin-icons/esbuild"
 
 const {
   entrypoint,
-  manifestSrc = "src/manifest.json",
+  manifestSrc = "manifest.json",
   outfile = "dist/script.user.js",
   noBuild,
   watch,
