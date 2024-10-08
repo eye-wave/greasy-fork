@@ -33,6 +33,6 @@ jobs:
 
       - name: Deploy built files to result branch
         run: |
-          git add dist
+          git add -f dist
           git commit -m "Build and deploy to build-result"
           git push origin build-result --force
