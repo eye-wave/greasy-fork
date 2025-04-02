@@ -11,8 +11,6 @@
     "builder": "bin/builder.ts"
   },
   "scripts": {
-    "format": "biome format . --write",
-    "lint": "biome lint . --apply-unsafe",
     "test": "bun test --coverage"
   },
   "dependencies": {
@@ -20,12 +18,11 @@
     "unplugin-icons": "^0.18.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.7.1",
-    "@iconify/json": "^2.2.205",
+    "@iconify/json": "^2.2.323",
     "@types/bun": "1.1.0"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.4.5"
   },
   "license": "GPL-3.0+"
 }

@@ -3,21 +3,18 @@
   "name": "greasyfork-scripts",
   "description": "collection of my user scripts for greasyfork",
   "scripts": {
-    "format": "turbo run format",
-    "lint": "turbo run lint",
+    "format": "biome format . --write",
+    "lint": "biome lint .",
     "test": "turbo run test",
     "build": "turbo run build",
     "clean": "find . -type d -name 'dist' | xargs -I{} rm {} -r",
     "update": "./scripts/update.sh"
   },
   "devDependencies": {
-    "turbo": "^1.13.3"
+    "@biomejs/biome": "^1.9.4",
+    "turbo": "^2.4.4"
   },
   "packageManager": "bun@1.1.4",
-  "workspaces": [
-    "packages/*",
-    "scripts/*",
-    "utils"
-  ],
+  "workspaces": ["packages/*", "scripts/*", "utils"],
   "license": "GPL-3.0+"
 }

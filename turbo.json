@@ -1,15 +1,10 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "tasks": {
     "build": {
+      "dependsOn": ["^build"],
       "cache": false
     },
-    "test": {},
-    "format": {},
-    "lint": {},
-    "dev": {
-      "cache": false,
-      "persistent": true
-    }
+    "test": {}
   }
 }

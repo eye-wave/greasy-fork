@@ -2,10 +2,10 @@ import { $s } from "@repo/utils"
 
 export function fixSearch() {
   const search = $s<HTMLAnchorElement>("a[title='Search']")
-  
-  if ( search ) {
+
+  if (search) {
     search.removeAttribute("data-tracking")
-    search.onclick =function() {
+    search.onclick = () => {
       window.location.pathname = "/wiki/Special:Search"
     }
   }

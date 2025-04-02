@@ -95,7 +95,7 @@ export async function parseFlags(args: string[]) {
       case "-w":
         options.watch = true
         break
-      
+
       case "--dev":
       case "-d":
         options.web = true

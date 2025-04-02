@@ -9,8 +9,7 @@
   },
   "scripts": {
     "dev": "builder --dev --open",
-    "format": "biome format . --write",
-    "lint": "biome lint . --apply-unsafe",
+
     "test": "bun test --coverage",
     "build": "builder -o ../../dist/idrlabs-solver.user.js"
   },
@@ -18,11 +17,10 @@
     "@repo/utils": "workspace:*"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.7.1",
     "@scripts/build": "workspace:*"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.4.5"
   },
   "license": "GPL-3.0+"
 }
