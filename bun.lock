@@ -51,6 +51,19 @@
         "typescript": "^5.4.5",
       },
     },
+    "packages/spotify-unsupported-fix": {
+      "name": "@packages/spotify-unsupported-fix",
+      "version": "0.0.0",
+      "dependencies": {
+        "@repo/utils": "workspace:*",
+      },
+      "devDependencies": {
+        "@scripts/build": "workspace:*",
+      },
+      "peerDependencies": {
+        "typescript": "^5.4.5",
+      },
+    },
     "scripts/builder": {
       "name": "@scripts/build",
       "version": "0.4.0",
@@ -77,6 +90,10 @@
       },
     },
   },
+  "trustedDependencies": [
+    "esbuild",
+    "@biomejs/biome",
+  ],
   "packages": {
     "@antfu/install-pkg": ["@antfu/install-pkg@0.3.5", "", { "dependencies": { "@jsdevtools/ez-spawn": "^3.0.4" } }, "sha512-HwIACY0IzrM7FGafMbWZOqEDBSfCwPcylu+GacaRcxJm4Yvvuh3Dy2vZwqdJAzXponc6aLO9FaH4l75pq8/ZSA=="],
 
@@ -161,6 +178,8 @@
     "@packages/samequizy-autoplay": ["@packages/samequizy-autoplay@workspace:packages/samequizy-autoplay"],
 
     "@packages/samequizy-solver": ["@packages/samequizy-solver@workspace:packages/samequizy-solver"],
+
+    "@packages/spotify-unsupported-fix": ["@packages/spotify-unsupported-fix@workspace:packages/spotify-unsupported-fix"],
 
     "@repo/utils": ["@repo/utils@workspace:utils"],
 

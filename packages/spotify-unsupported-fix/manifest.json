@@ -1,0 +1,8 @@
+{
+  "$schema": "../../scripts/builder/src/manifest/schema.json",
+  "name": "spotify.com - Unsupported fix",
+  "namespace": "spotify.com fix",
+  "match": "https://open.spotify.com/*",
+  "description": "Replaces 'Get the App' button with 'Open in App' instead for unsupported browsers.",
+  "extends": ["../../manifest.json"]
+}
