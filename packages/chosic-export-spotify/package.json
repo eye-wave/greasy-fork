@@ -1,6 +1,6 @@
 {
   "name": "@packages/chosic-export-spotify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "module": "src/main.ts",
   "main": "src/main.ts",
   "type": "module",
