@@ -11,8 +11,8 @@
     "update": "./scripts/update.sh"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "turbo": "^2.4.4"
+    "@biomejs/biome": "^2.1.4",
+    "turbo": "^2.5.5"
   },
   "packageManager": "bun@1.1.4",
   "workspaces": ["packages/*", "scripts/*", "utils"],
