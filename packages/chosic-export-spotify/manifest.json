@@ -1,0 +1,8 @@
+{
+  "$schema": "../../scripts/builder/src/manifest/schema.json",
+  "name": "chosic.com - export playlist ",
+  "namespace": "Spotify tools",
+  "match": "https://samequizy.pl/*",
+  "description": "Allows exporting playlist from chosic.com to clipboard without loggin in.",
+  "extends": ["../../manifest.json", "./manifest.locale.json"]
+}

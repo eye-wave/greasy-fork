@@ -1,9 +1,9 @@
-import { $s } from "@repo/utils";
+import { $s } from "@repo/utils"
 
-const btn = $s<HTMLAnchorElement>("a.primary");
+const btn = $s<HTMLAnchorElement>("a.primary")
 if (btn) {
-  const url = "spotify" + location.pathname.replace("/", ":");
+  const url = "spotify" + location.pathname.replace("/", ":")
 
-  btn.href = url;
-  btn.textContent = "Open in App";
+  btn.href = url
+  btn.textContent = "Open in App"
 }
